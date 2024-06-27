@@ -11,8 +11,10 @@ const links: link[] = [
 ];
 ---
 
-<nav class="sticky top-0 flex justify-center p-5 z-10">
-  <div class="flex items-center gap-8 bg-slate-900/90 py-2 px-4 rounded-full">
+<nav class="sticky top-0 flex justify-center p-2 z-10">
+  <div
+    class="flex items-center gap-4 bg-slate-900/90 py-1 px-3 rounded-full min-w-max"
+  >
     {
       links.map((link) => (
         <a
@@ -25,30 +27,3 @@ const links: link[] = [
     }
   </div>
 </nav>
-
-<script>
-  const links = document.querySelectorAll("a");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.reverse().forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = "#" + entry.target.getAttribute("id");
-          links.forEach((link) => {
-            if (link.hash === id) {
-              link.classList.add("text-yellow-500");
-            } else {
-              link.classList.remove("text-yellow-500");
-            }
-          });
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
-
-  document.querySelectorAll("section").forEach((section) => {
-    observer.observe(section);
-  });
-</script>
