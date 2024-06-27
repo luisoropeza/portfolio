@@ -1,0 +1,198 @@
+---
+import { Image } from "astro:assets";
+import MySwiper from "./Swiper";
+interface image {
+  src: string;
+  alt: string;
+}
+interface project {
+  title: string;
+  description: string;
+  images: image[];
+  technologies: image[];
+  repositories: string[];
+}
+
+const projects: project[] = [
+  {
+    title: "Jwt",
+    description:
+      "Implementacion de JWT con Spring Boot y React JS, usando RTK Query. Proyecto realizado para practicar y mejorar mi conocimiento en React JS y Spring Boot.",
+
+    images: [
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/jwt-project/fghwqviclrh8a3q8pmqh.png",
+        alt: "jwt",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/jwt-project/zywauastkc9wxbpjblpz.png",
+        alt: "jwt",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/jwt-project/fj9goquaxlnxkekdfgg5.png",
+        alt: "jwt",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/jwt-project/gzeqxbypqgy4fuyeg9td.png",
+        alt: "jwt",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/jwt-project/cpaowcy3dcr5oaqgcvkk.png",
+        alt: "jwt",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/jwt-project/k60acibh511yggsdaacu.png",
+        alt: "jwt",
+      },
+    ],
+    technologies: [
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/czeaj0waf63zydaea9ku.png",
+        alt: "java",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/bzidmcxxoiqegqtlpiax",
+        alt: "typescript",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/juycw9plqeljdcqu7qfc.png",
+        alt: "spring boot",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/wrrsdmvr8d18t3tte9wu.png",
+        alt: "reactjs",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/n9f6ywnkrjowb4ubn5bm.png",
+        alt: "git",
+      },
+    ],
+    repositories: ["https://github.com/luisoropeza/jwt-fullstack.git"],
+  },
+  {
+    title: "Sistema de gestion de solicitudes de licencias y permisos",
+    description:
+      "Proyecto realizador para mi defensa de grado usando Spring Boot y Vue JS, este sistema cuenta con un sistema de roles en el que cada usuario tiene sus respectivas funciones como la de gestionar usuarios, gestionar solicitudes y poder realizar solicitudes licencias o permisos.",
+
+    images: [
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/ski1onsdjlfjs6l5rcoi.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/zdtcplyaxn5ln8na2zx2.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/fqfpslbooxkwxykmwtxs.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/qwdhn8qzhrxxqtl5bint.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/kfmg250vvdibvsoklltz.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/slfcfw5r6tjdyaj0wqtt.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/v8knwg0xxpmuuym3mzqq.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/vhhrmmg0gd21uqfjnalk.png",
+        alt: "sgslv",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719456556/portfolio/sgslv/qziqyn31lv1hs6dypc9a.png",
+        alt: "sgslv",
+      },
+    ],
+    technologies: [
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/czeaj0waf63zydaea9ku.png",
+        alt: "java",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/t6i9iizkryj6ynqityqw.png",
+        alt: "javascript",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/juycw9plqeljdcqu7qfc.png",
+        alt: "spring boot",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/oyy1tcadjvrbwa8lxvv9.png",
+        alt: "vuejs",
+      },
+      {
+        src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/n9f6ywnkrjowb4ubn5bm.png",
+        alt: "git",
+      },
+    ],
+    repositories: [
+      "https://github.com/luisoropeza/sgslv-back.git",
+      "https://github.com/luisoropeza/sgslv-front-primevue.git",
+    ],
+  },
+];
+---
+
+<div class="w-full flex flex-col gap-5">
+  {
+    projects.map((project) => (
+      <div class="flex flex-col w-full shadow-lg rounded-xl bg-slate-950/50">
+        <div class="w-full p-1 bg-cover rounded-lg">
+          <MySwiper client:load images={project.images} />
+        </div>
+        <div class="w-full flex flex-col p-5">
+          <div class="text-3xl font-bold text-yellow-600">{project.title}</div>
+          <div>
+            <div class="text-xl font-bold text-yellow-600">Descripcion:</div>
+            <div class="text-justify text-sm font-normal">
+              {project.description}
+            </div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-yellow-600">Tecnologias:</div>
+            <div class="flex gap-2 p-2">
+              {project.technologies.map((image) => (
+                <div>
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={30}
+                    height={30}
+                    loading={"eager"}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <div class="text-xl font-bold text-yellow-600">
+              {project.repositories.length > 1
+                ? "Repositorios:"
+                : "Repositorio:"}
+            </div>
+            <ol class="list-disc list-inside text-sm font-normal text-blue-500">
+              {project.repositories.map((repo) => (
+                <li>
+                  <a href={repo} target="_blank">
+                    {repo}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style></style>

@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+
+interface image {
+  src: string;
+  alt: string;
+}
+
+const images: image[] = [
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/czeaj0waf63zydaea9ku.png",
+    alt: "java",
+  },
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/t6i9iizkryj6ynqityqw.png",
+    alt: "javascript",
+  },
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/bzidmcxxoiqegqtlpiax",
+    alt: "typescript",
+  },
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/tqmeltaixhur8aifpgui.png",
+    alt: "nodejs",
+  },
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/juycw9plqeljdcqu7qfc.png",
+    alt: "spring boot",
+  },
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/wrrsdmvr8d18t3tte9wu.png",
+    alt: "reactjs",
+  },
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/oyy1tcadjvrbwa8lxvv9.png",
+    alt: "vuejs",
+  },
+  {
+    src: "https://res.cloudinary.com/dvqh29igh/image/upload/v1719270802/portfolio/n9f6ywnkrjowb4ubn5bm.png",
+    alt: "git",
+  },
+];
+---
+
+<div class="flex flex-wrap justify-center gap-3 bg-white/15 p-2 rounded-xl">
+  {
+    images.map((image) => (
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={40}
+        height={40}
+        loading={"eager"}
+      />
+    ))
+  }
+</div>

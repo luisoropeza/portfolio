@@ -1,0 +1,54 @@
+---
+interface link {
+  name: string;
+  href: string;
+}
+
+const links: link[] = [
+  { name: "Acerca de mi", href: "#about" },
+  { name: "Proyectos", href: "#projects" },
+  { name: "Contactame", href: "#contact" },
+];
+---
+
+<nav class="sticky top-0 flex justify-center p-5 z-10">
+  <div class="flex items-center gap-8 bg-slate-900/90 py-2 px-4 rounded-full">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class="text-white text-sm font-bold hover:text-yellow-500"
+        >
+          {link.name}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<script>
+  const links = document.querySelectorAll("a");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.reverse().forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = "#" + entry.target.getAttribute("id");
+          links.forEach((link) => {
+            if (link.hash === id) {
+              link.classList.add("text-yellow-500");
+            } else {
+              link.classList.remove("text-yellow-500");
+            }
+          });
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  document.querySelectorAll("section").forEach((section) => {
+    observer.observe(section);
+  });
+</script>

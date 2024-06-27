@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import Images from "../components/Images.astro";
+import NavBar from "../components/NavBar.astro";
+import Layout from "../layouts/Layout.astro";
+import Projects from "../components/Projects.astro";
+import ContactMe from "../components/ContactMe.jsx";
+---
+
+<Layout title="LDOC | Portfolio">
+  <main>
+    <NavBar />
+    <section
+      id="about"
+      class="container mx-auto flex flex-col justify-center items-center py-20 scroll-m-[4.75rem] gap-5 max-w-3xl"
+    >
+      <div
+        class="flex flex-col justify-center items-center gap-2 text-center text-yellow-600"
+      >
+        <Image
+          src="https://res.cloudinary.com/dvqh29igh/image/upload/v1719268577/portfolio/if8lbg1zypykdb3lpjyx.jpg"
+          alt="Luis David Oropeza Cordova"
+          width={240}
+          height={240}
+          class={"rounded-full shadow-lg"}
+          loading={"eager"}
+        />
+        <div class="text-3xl font-bold">Luis David Oropeza Cordova</div>
+        <div class="text-xl font-medium">Full Stack Developer</div>
+        <div class="flex gap-2 bg-white/15 px-2 py-1 rounded-full flex-wrap">
+          <a
+            href="https://www.linkedin.com/in/luis-david-oropeza-cordova/"
+            target="_blank"
+          >
+            <Image
+              src="https://res.cloudinary.com/dvqh29igh/image/upload/v1719268577/portfolio/ab3d2evamcqmwkvoukr5.png"
+              alt="Linkedin"
+              width={25}
+              height={25}
+              class={"shadow-lg"}
+              loading={"eager"}
+            />
+          </a>
+          <a href="https://github.com/luisoropeza" target="_blank">
+            <Image
+              src="https://res.cloudinary.com/dvqh29igh/image/upload/v1719268577/portfolio/j9ortwottirofhvv9ope.png"
+              alt="Github"
+              width={25}
+              height={25}
+              class={"shadow-lg"}
+              loading={"eager"}
+            />
+          </a>
+        </div>
+        <div class="w-full text-base font-normal text-justify text-white">
+          Hola, soy un desarrollador web full stack, con la capacidad de
+          realizar API RESTfull con Java Spring Boot, y realizar interfaces de
+          usuario con React js, Vue js, tanto con el manejo de Javascript como
+          Typescript. Soy alguien al que le gusta aprender cosas nuevas, y me
+          adapto a las nuevas tecnologías.
+        </div>
+        <Images />
+      </div>
+    </section>
+    <section
+      id="projects"
+      class="container mx-auto flex flex-col justify-center items-center pb-20 scroll-m-[4.75rem] gap-5 max-w-3xl"
+    >
+      <div class="text-white text-2xl font-bold w-full text-start">
+        Projects
+      </div>
+      <Projects />
+    </section>
+    <section
+      id="contact"
+      class="container mx-auto flex flex-col justify-center items-center pb-20 scroll-m-[4.75rem] gap-5 max-w-3xl"
+    >
+      <div
+        class="bg-slate-950/50 w-full shadow-lg rounded-xl p-10 flex flex-col gap-5"
+      >
+        <div class="text-white text-2xl font-bold w-full text-start">
+          Contactame
+        </div>
+        <ContactMe client:load />
+      </div>
+    </section>
+  </main>
+</Layout>
