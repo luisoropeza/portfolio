@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import luis from "../../public/luis.jpg";
+import { Github, Linkedin, Mail } from "lucide-astro";
+import Java from "./icons/Java.astro";
+import Php from "./icons/Php.astro";
+import Node from "./icons/NodeJs.astro";
+import Javascript from "./icons/Javascript.astro";
+import Typescript from "./icons/Typescript.astro";
+import AstroJs from "./icons/AstroJs.astro";
+import ReactJs from "./icons/ReactJs.astro";
+import VueJs from "./icons/VueJs.astro";
+import Laravel from "./icons/Laravel.astro";
+import SpringBoot from "./icons/SpringBoot.astro";
+import NestJs from "./icons/NestJs.astro";
+import Postgres from "./icons/Postgres.astro";
+---
+
+<section class="flex flex-col md:pt-28 pt-10 gap-10 text-slate-300">
+  <div class="gap-5 flex flex-col">
+    <div class="flex flex-row flex-wrap gap-5 items-center">
+      <Image
+        src={luis}
+        alt="Luis David"
+        width="100"
+        height="100"
+        class="rounded-full"
+        loading="eager"
+      />
+      <div
+        class="border border-green-500 rounded-full p-[5px] text-xs font-bold bg-green-500/20"
+      >
+        Disponible para trabajar
+      </div>
+    </div>
+    <div class="gap-5 flex flex-col">
+      <div
+        class="text-4xl font-bold animate-slide-in [&>strong]:text-green-500 [&>strong]:font-bold"
+      >
+        Hola!!, soy <strong>Luis David</strong>
+      </div>
+      <div
+        class="text-base text-justify font-semibold [&>strong]:text-green-500 [&>strong]:font-medium animate-fade-in"
+      >
+        Soy un <strong>Full Stack Developer </strong> apasionado por el desarrollo
+        web y la programación, con experiencia en tecnologías como JavaScript, TypeScript,
+        React.js, Vue.js, Node.js, Spring Boot, y más. Me gusta enfrentar nuevos
+        desafíos, aprender constantemente y aplicar ese conocimiento en proyectos
+        innovadores. Disfruto trabajando tanto en el frontend como en el backend,
+        colaborando en equipo y creando soluciones eficientes y escalables.
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2 text-center">
+    <div class="flex flex-row gap-2 items-center">
+      <div class="text-sm font-bold">Encuetrame en:</div>
+      <a href="https://github.com/oropezacordova" target="_blank">
+        <title>Github</title>
+        <Github />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/luis-david-oropeza-cordova/"
+        target="_blank"
+      >
+        <title>Linkedin</title>
+        <Linkedin color="#3b82f6" />
+      </a>
+    </div>
+    <div class="flex flex-row gap-2 items-center">
+      <div class="text-sm font-bold">Contactame:</div>
+      <button id="copy-button">
+        <Mail color="#ef4444" />
+      </button>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <div class="text-2xl font-bold text-green-500">Stack de tecnologías:</div>
+    <div
+      class="flex flex-wrap gap-5 justify-center bg-slate-500/20 p-5 rounded-lg"
+    >
+      <Java size="w-12" />
+      <Php size="w-12" />
+      <Node size="w-12" />
+      <Javascript size="w-12" />
+      <Typescript size="w-12" />
+      <AstroJs size="w-12" />
+      <ReactJs size="w-12" />
+      <VueJs size="w-12" />
+      <Laravel size="w-12" />
+      <SpringBoot size="w-12" />
+      <NestJs size="w-12" />
+      <Postgres size="w-12" />
+    </div>
+  </div>
+  <div class="flex justify-center">
+    <div
+      id="copy-message"
+      class="hidden fixed top-20 bg-slate-500/80 border border-slate-500 rounded-full p-[5px]"
+    >
+    </div>
+  </div>
+</section>

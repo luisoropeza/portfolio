@@ -1,0 +1,135 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    id="inicio"
+    class="flex flex-col min-h-screen min-w-80 bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+  >
+    <Header />
+    <main class="flex flex-grow flex-col container mx-auto max-w-[750px] px-10">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  const copyButton = document.getElementById("copy-button");
+  const copyMessage = document.getElementById("copy-message");
+
+  if (copyButton) {
+    copyButton.addEventListener("click", () => {
+      navigator.clipboard.writeText("luisdavid.ingsis@gmail.com").then(
+        () => {
+          if (copyMessage) {
+            copyMessage.textContent = "Correo copiado al portapapeles!";
+            copyMessage.classList.remove("hidden");
+            setTimeout(() => {
+              copyMessage.classList.add("hidden");
+            }, 3000);
+          }
+        },
+        (err) => {
+          console.error("Error copiando al portapapeles", err);
+        }
+      );
+    });
+  }
+
+  const items = document.querySelectorAll(".fade-in-left");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
+    });
+  });
+
+  items.forEach((item) => {
+    observer.observe(item);
+  });
+</script>
+
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  @keyframes slide-in {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(50px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+
+  .fade-in-left.visible {
+    animation: fadeInLeft 0.5s forwards;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 1s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.5s ease-out forwards;
+  }
+</style>

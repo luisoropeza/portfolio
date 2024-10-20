@@ -1,0 +1,48 @@
+---
+const links = [
+  { href: "#inicio", text: "Inicio" },
+  { href: "#estudios", text: "Estudios" },
+  { href: "#proyectos", text: "Proyectos" },
+];
+---
+
+<header
+  class="flex flex-row justify-center md:justify-end p-5 text-white sticky top-0 z-10"
+>
+  <nav id="main-header" class="px-4 py-1 w-min rounded-2xl">
+    <ul class="flex flex-row gap-3">
+      {
+        links.map((link) => (
+          <li class="text-base font-semibold relative">
+            <a
+              class="hover:text-green-500 before:content-[''] before:absolute before:w-0 before:bottom-0 before:left-0 before:h-[2px] before:bg-current before:transition-all before:duration-300 hover:before:w-full"
+              href={link.href}
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const header = document.getElementById("main-header");
+    if (header) {
+      if (window.scrollY > 50) {
+        header.classList.add("header-bg");
+      } else {
+        header.classList.remove("header-bg");
+      }
+    }
+  });
+</script>
+
+<style>
+  .header-bg {
+    background-color: #4b5563;
+    transition: background-color 0.3s ease-in-out;
+  }
+</style>

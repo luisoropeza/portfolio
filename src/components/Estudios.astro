@@ -1,0 +1,40 @@
+---
+const { id } = Astro.props;
+
+const estudios = [
+  {
+    date: "2017 - 2024",
+    title: "Licenciatura en Ingenieria de Sistemas",
+    description:
+      "Carrera de Licenciatura en Ingenieria de Sistemas, Universidad Mayor de San Simon, Bolivia - Cochabamba",
+  },
+  {
+    date: "2024",
+    title: "Diplomado Experto en desarrollo de aplicaciones empresariales",
+    description:
+      "Diplomado Experto en desarrollo de aplicaciones empresariales en la Universidad Mayor de San Simon Postgrado, Bolivia - Cochabamba",
+  },
+];
+---
+
+<section id={id} class="flex flex-col gap-10 md:pt-10 text-slate-300">
+  <div class="text-green-500 text-2xl font-bold">Estudios</div>
+  <ol class="relative border-s border-green-500 animate-fade-in">
+    {
+      estudios.map((estudio) => (
+        <div class="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -start-1.5" />
+        <li class="fade-in-left mb-10 ms-4">
+          <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+            {estudio.date}
+          </time>
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+            {estudio.title}
+          </h3>
+          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+            {estudio.description}
+          </p>
+        </li>
+      ))
+    }
+  </ol>
+</section>

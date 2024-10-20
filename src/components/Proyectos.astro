@@ -1,0 +1,17 @@
+---
+import { Hammer } from "lucide-astro";
+
+const { id } = Astro.props;
+---
+
+<section id={id} class="flex flex-col gap-10 md:pt-10 text-slate-300">
+  <div class="text-green-500 text-2xl font-bold">Proyectos</div>
+  <div
+    class="flex flex-col justify-center items-center h-80 animate-fade-in text-base font-semibold"
+  >
+    <div class="animate-bounce">
+      <Hammer height="100" width="100" />
+    </div>
+    <div>Proyectos en desarrollo</div>
+  </div>
+</section>
